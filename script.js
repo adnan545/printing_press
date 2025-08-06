@@ -1,3 +1,18 @@
+// Disable right-click (Context Menu)
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault(); // This prevents the right-click menu
+});
+
+// Disable F12 (Developer Tools) and Ctrl + Shift + I (Inspector)
+document.addEventListener('keydown', function (e) {
+  // Disable F12 key (DevTools)
+  if (e.key === "F12" || 
+     (e.ctrlKey && e.shiftKey && e.key === "I") || 
+     (e.ctrlKey && e.shiftKey && e.key === "J")) {
+    e.preventDefault(); // Prevent the default behavior
+  }
+});
+
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileNav = document.getElementById('mobile-nav');
