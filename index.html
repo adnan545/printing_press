@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrintCraft - Professional Printing Services</title>
+  <meta name="description" content="Your trusted partner for high-quality printing services. From business cards to large format prints, we deliver excellence with every project.">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-print"></i>
+          </div>
+          <span class="logo-text">PrintCraft</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links desktop-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="btn btn-primary">Get Quote</button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="mobile-menu-toggle">
+          <button class="theme-toggle" id="mobile-theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="mobile-menu-btn">
+            <i class="fas fa-bars" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="mobile-btn-container">
+          <button class="btn btn-primary btn-full">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Professional Printing Solutions for Your Business</h1>
+      <p>High-quality printing services with fast turnaround times and competitive pricing</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-primary">Our Services</a>
+        <a href="contact.html" class="btn btn-secondary">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose PrintCraft</h2>
+        <p>We deliver excellence with every print job</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Fast Turnaround</h3>
+          <p>Quick delivery without compromising on quality</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Premium Quality</h3>
+          <p>Industry-leading standards for all printing services</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Expert Team</h3>
+          <p>Experienced professionals dedicated to your success</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Satisfaction Guaranteed</h3>
+          <p>We stand behind every project we deliver</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive printing solutions for all your needs</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-print"></i>
+          </div>
+          <h3>Offset Printing</h3>
+          <p>High-volume printing with exceptional quality and cost-effectiveness.</p>
+          <a href="services.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3>Digital Printing</h3>
+          <p>Fast, flexible printing perfect for short runs and variable data.</p>
+          <a href="services.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-image"></i>
+          </div>
+          <h3>Large Format</h3>
+          <p>Eye-catching banners, posters, and signage that make an impact.</p>
+          <a href="services.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <h3>Custom Products</h3>
+          <p>Personalized merchandise and promotional items for your brand.</p>
+          <a href="services.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="services-cta">
+        <a href="services.html" class="btn btn-primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Trusted by businesses of all sizes</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>PrintCraft delivered our marketing materials on time and exceeded our quality expectations. Highly recommended!</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="author-name">Sarah Johnson</p>
+            <p class="author-title">Marketing Director, TechCorp</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>From menus to signage, they handle all our printing needs with professionalism and great attention to detail.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="author-name">Mike Chen</p>
+            <p class="author-title">Owner, Local Restaurant</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>Their large format printing for our conference was outstanding. The banners looked incredible!</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="author-name">Lisa Rodriguez</p>
+            <p class="author-title">Event Coordinator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-company">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-print"></i>
+            </div>
+            <span class="logo-text">PrintCraft</span>
+          </a>
+          <p>Your trusted partner for high-quality printing services. From business cards to large format prints, we deliver excellence with every project.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>(555) 123-4567</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@printcraft.com</span>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Print Street<br>Business District<br>City, State 12345</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 PrintCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
