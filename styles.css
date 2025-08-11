@@ -1,3 +1,22 @@
+/* Small Hero Button */
+.hero-content button {
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0a3d80 60%, #47c1e8 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(10,61,128,0.08);
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.hero-content button:hover {
+  background: linear-gradient(90deg, #47c1e8 60%, #0a3d80 100%);
+  transform: translateY(-2px) scale(1.05);
+}
 /* Base Styles */
 :root {
   /* Light Mode Colors */
@@ -1441,9 +1460,9 @@ section {
   }
   
   .samples-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+  padding: 16px;
   }
   
   .sample-item img {
