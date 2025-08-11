@@ -1100,6 +1100,9 @@ section {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.25rem;
+  }
   .desktop-nav {
     display: none;
   }
@@ -1262,7 +1265,7 @@ section {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--text-secondary);
+  color: white;
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -1271,7 +1274,7 @@ section {
 
 .popup-close:hover {
   background: var(--hover-bg);
-  color: var(--text-primary);
+  color: vwhite
 }
 
 .samples-grid {
@@ -1297,10 +1300,12 @@ section {
 }
 
 .sample-item img {
-  width: 100%;
+  width: 220px;
   height: 150px;
   object-fit: cover;
   transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 .sample-item:hover img {
