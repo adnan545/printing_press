@@ -355,4 +355,5 @@ document.addEventListener('keydown', function(e) {
   if (samplesPopup.classList.contains('active') && e.key === 'Escape') {
     closeSamplesPopup();
   }
+
 });
