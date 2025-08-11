@@ -163,7 +163,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: 5.5rem;
 }
 
 .logo {
@@ -176,16 +176,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--primary), #1a5db3);
+  width: 5rem;
+  height: 5rem;
+  /* padding-bottom: 10px;
+  padding-top: 10px; */
+  /* border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary), #1a5db3); */
   color: white;
 }
 
 .logo-text {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2.3rem;
 }
 
 .nav-links {

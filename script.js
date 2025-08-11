@@ -133,12 +133,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Sample images data
 const sampleImages = {
   'letterhead': [
-    { src: 'https://via.placeholder.com/400x300/4F46E5/FFFFFF?text=Letterhead+Sample+1', alt: 'Letterhead Sample 1' },
-    { src: 'https://via.placeholder.com/400x300/7C3AED/FFFFFF?text=Letterhead+Sample+2', alt: 'Letterhead Sample 2' },
-    { src: 'https://via.placeholder.com/400x300/DC2626/FFFFFF?text=Letterhead+Sample+3', alt: 'Letterhead Sample 3' },
-    { src: 'https://via.placeholder.com/400x300/059669/FFFFFF?text=Letterhead+Sample+4', alt: 'Letterhead Sample 4' },
-    { src: 'https://via.placeholder.com/400x300/D97706/FFFFFF?text=Letterhead+Sample+5', alt: 'Letterhead Sample 5' },
-    { src: 'https://via.placeholder.com/400x300/BE185D/FFFFFF?text=Letterhead+Sample+6', alt: 'Letterhead Sample 6' }
+    { src: '/images/pngegg (11).png', alt: 'Letterhead Sample 1' },
+    { src: '/images/pngegg (10).png', alt: 'Letterhead Sample 2' },
+    { src: '/images/pngegg (13).png', alt: 'Letterhead Sample 3' },
+    { src: '/images/pngegg (3).png', alt: 'Letterhead Sample 4' },
+    { src: '/images/pngegg (8).png', alt: 'Letterhead Sample 5' },
+    { src: '/images/pngegg (9).png', alt: 'Letterhead Sample 6' }
   ],
   'business-cards': [
     { src: 'https://via.placeholder.com/400x300/1E40AF/FFFFFF?text=Business+Card+1', alt: 'Business Card Sample 1' },
