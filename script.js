@@ -133,12 +133,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Sample images data
 const sampleImages = {
   'letterhead': [
-    { src: '/images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: '/images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: '/images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: '/images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: '/images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: '/images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
+    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
+    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
+    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
+    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
+    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
   ],
   'business-cards': [
     { src: 'https://via.placeholder.com/400x300/1E40AF/FFFFFF?text=Business+Card+1', alt: 'Business Card Sample 1' },
@@ -350,4 +350,5 @@ document.addEventListener('keydown', function(e) {
   if (samplesPopup.classList.contains('active') && e.key === 'Escape') {
     closeSamplesPopup();
   }
+
 });
