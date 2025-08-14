@@ -10,21 +10,6 @@ if (mobileMenuBtn && mobileNav && menuIcon) {
     menuIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
   });
 }
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  // Normally you would send form data here with AJAX or let send_mail.php handle it
-
-  // Show popup
-  document.getElementById("successPopup").style.display = "flex";
-
-  // Reset form
-  this.reset();
-});
-
-function closePopup() {
-  document.getElementById("successPopup").style.display = "none";
-}
 
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
@@ -148,68 +133,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Sample images data
 const sampleImages = {
   'letterhead': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+    { src: 'images/letter head2.png', alt: 'Letterhead Sample 1' },
+    { src: 'images/letter head6.webp', alt: 'Letterhead Sample 2' },
+    { src: 'images/letter head3.webp', alt: 'Letterhead Sample 3' },
+    { src: 'images/letter head5.webp', alt: 'Letterhead Sample 4' },
+    { src: 'images/letter head7.jpg', alt: 'Letterhead Sample 5' },
+    { src: 'images/letter head7.png', alt: 'Letterhead Sample 6' }
   ],
   'business-cards': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+    { src: 'images/business card 2.png', alt: 'business card' },
+    { src: 'images/business-card 3.png', alt: 'business card' },
+    { src: 'images/Bussnes Card.png', alt: 'business card' },
+    { src: 'images/business card 1.png', alt: 'business card' },
+    { src: 'images/Bussness card (1).png', alt: 'business card' },
+    { src: 'images/bussness card.png', alt: 'business card' }
   ],
   'wedding-cards': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+    { src: 'images/wedding card4.jpg', alt: 'wedding card' },
+    { src: 'images/wedding card3.jpg', alt: 'wedding card' },
+    { src: 'images/wedding card7.webp', alt: 'wedding card' },
+    { src: 'images/wedding card6.webp', alt: 'wedding card' },
+    { src: 'images/wedding card5.jpg', alt: 'wedding card' },
+    { src: 'images/wedding card1.png', alt: 'wedding card' }
   ],
   'posters': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+    { src: 'images/poster3.webp', alt: 'posters' },
+    { src: 'images/vegetable pamphalate.jpg', alt: 'posters' },
+    { src: 'images/poster1.jpg', alt: 'posters' },
+    { src: 'images/poster2.jpg', alt: 'posters' },
+    { src: 'images/poster4.avif', alt: 'posters' },
+    { src: 'images/Pamphalate.png', alt: 'posters' }
   ],
-  'offset-printing': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+  'stamp': [
+    { src: 'images/rubber stamp2.avif', alt: 'Letterhead Sample 1' },
+    { src: 'images/rubber stamp3.webp', alt: 'Letterhead Sample 2' },
+    { src: 'images/rubber stamp4.webp', alt: 'Letterhead Sample 3' }
   ],
-  'digital-printing': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+  'diary-book': [
+    { src: 'images/diary sample.png', alt: 'posters' },
+    { src: 'images/diary sample3.webp', alt: 'posters' },
+    { src: 'images/diary sample4.webp', alt: 'posters' }
   ],
-  'large-format': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+  'bill-book': [
+    { src: 'images/HB Polish 2.png', alt: 'Letterhead Sample 1' },
+    { src: 'images/bill book1.jpg', alt: 'Letterhead Sample 2' },
+    { src: 'images/bill book3.png', alt: 'Letterhead Sample 3' }
   ],
-  'custom-products': [
-    { src: 'images/pngegg (11).png', alt: 'Letterhead Sample 1' },
-    { src: 'images/pngegg (10).png', alt: 'Letterhead Sample 2' },
-    { src: 'images/pngegg (13).png', alt: 'Letterhead Sample 3' },
-    { src: 'images/pngegg (3).png', alt: 'Letterhead Sample 4' },
-    { src: 'images/pngegg (8).png', alt: 'Letterhead Sample 5' },
-    { src: 'images/pngegg (9).png', alt: 'Letterhead Sample 6' }
+  'id-cards': [
+    { src: 'images/id card.png', alt: 'posters' },
+    { src: 'images/id card1.jpg', alt: 'posters' },
+    { src: 'images/id card2.jpg', alt: 'posters' }
   ]
 };
 
