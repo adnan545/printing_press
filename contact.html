@@ -18,9 +18,10 @@
         <!-- Logo -->
         <a href="index.html" class="logo">
           <div class="logo-icon">
-            <i class="fas fa-print"></i>
+            <img src="images/4.png" alt="Logo">
           </div>
           <span class="logo-text">PERFECT PRINTER</span>
+          <!-- <p>Premium Printing Solutions with Cutting-Edge Technology</p> -->
         </a>
 
         <!-- Desktop Navigation -->
@@ -75,40 +76,95 @@
             <h2><i class="fas fa-paper-plane"></i> Send us a Message</h2>
             <p>Fill out the form below and we'll get back to you as soon as possible.</p>
           </div>
-          <form class="contact-form" id="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject *</label>
-                <select id="subject" name="subject" required>
-                  <option value="">Select a subject</option>
-                  <option value="quote">Request a Quote</option>
-                  <option value="question">General Question</option>
-                  <option value="support">Customer Support</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+          <form class="contact-form" id="contact-form" method="POST" action="send_mail.php">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Tell us about your printing project..." rows="6"></textarea>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{10,}" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">-- Select a Service --</option>
+                <optgroup label="Standard Printing">
+                  <option value="letterhead">Letter Head Printing</option>
+                  <option value="business-card">Business Cards</option>
+                  <option value="wedding-card">Wedding Cards</option>
+                  <option value="poster">Posters</option>
+                  <option value="pamphlet">Pamphlets</option>
+                  <option value="brochure">Brochures</option>
+                  <option value="banner">Banner Boards</option>
+                  <option value="standee">Standees</option>
+                  <option value="stamp">Rubber Stamps</option>
+                  <option value="id-card">School ID Cards</option>
+                  <option value="diary">Diary Books</option>
+                  <option value="bill-book">Bill Books</option>
+                  <option value="invoice-book">Invoice Books</option>
+                  <option value="envelope">Envelopes</option>
+                  <option value="school-items">School Item Printing</option>
+                  <option value="tent-card">Table Tent Cards</option>
+                </optgroup>
+                <optgroup label="Labels & Packaging">
+                  <option value="product-label">Product & Packaging Labels</option>
+                  <option value="industrial-label">Industrial Labels</option>
+                  <option value="custom-packaging">Custom Packaging</option>
+                  <option value="adhesive-tape">Self Adhesive Tapes</option>
+                  <option value="courier-bag">Courier Bags</option>
+                  <option value="mailer-box">Flat Mailer Boxes</option>
+                  <option value="corrugated-box">Corrugated Boxes</option>
+                </optgroup>
+                <optgroup label="Special Items">
+                  <option value="polo-tshirt">Custom Polo T-Shirts</option>
+                  <option value="printed-tshirt">Printed T-Shirts</option>
+                  <option value="cap">Caps</option>
+                  <option value="bag">Bags</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group form-group-full">
+              <label for="limit">Quantity/Limit</label>
+              <input type="number" id="limit" name="limit" min="100" value="100" required>
+            </div>
+            <div class="form-group form-group-full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <!-- Payment Method Section -->
+            <div class="form-group form-group-full">
+              <label for="payment-method" style="font-weight:600;font-size:1.1rem;margin-bottom:8px;">Payment Method</label>
+              <div class="payment-methods-row">
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="phonepe" required>
+                  <img src="images/phonepay.webp" alt="PhonePe" class="payment-icon">
+                  <!-- <span>PhonePe</span> -->
+                </label>
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="googlepay">
+                  <img src="images/googlepay.png" alt="Google Pay" class="payment-icon">
+                  <span>Google Pay</span>
+                </label>
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="upi">
+                  <img src="images/upi.png" alt="UPI" class="payment-icon">
+                  <span>UPI</span>
+                </label>
+                <label class="payment-method-card">
+                  <input type="radio" name="payment_method" value="bank">
+                  <img src="images/bank.png" alt="Bank Transfer" class="payment-icon">
+                  <span>Bank Transfer</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
 
@@ -247,6 +303,15 @@
           </ul>
         </div>
       </div>
+      <!-- Popup Modal -->
+<div id="successPopup" class="popup-overlay">
+  <div class="popup-box">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <h2>✅ Message Sent!</h2>
+    <p>Thank you for contacting us. Our team will get back to you shortly.</p>
+    <button class="btn btn-primary" onclick="closePopup()">OK</button>
+  </div>
+</div>
 
       <div class="footer-bottom">
         <p>&copy; 2024 Perfect Printer. All rights reserved.</p>

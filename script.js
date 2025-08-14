@@ -10,6 +10,21 @@ if (mobileMenuBtn && mobileNav && menuIcon) {
     menuIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
   });
 }
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Normally you would send form data here with AJAX or let send_mail.php handle it
+
+  // Show popup
+  document.getElementById("successPopup").style.display = "flex";
+
+  // Reset form
+  this.reset();
+});
+
+function closePopup() {
+  document.getElementById("successPopup").style.display = "none";
+}
 
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
