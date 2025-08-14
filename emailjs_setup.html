@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmailJS Setup Guide - Perfect Printer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .guide-container h1 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    
+    .guide-container h2 {
+      color: var(--text-color);
+      margin: 30px 0 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+    
+    .guide-container h3 {
+      color: var(--text-color);
+      margin: 20px 0 10px;
+      font-size: 1.2rem;
+    }
+    
+    .guide-container p, .guide-container li {
+      color: var(--text-color);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .guide-container ul, .guide-container ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .guide-container code {
+      background-color: var(--code-bg);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--code-color);
+    }
+    
+    .guide-container a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .guide-container a:hover {
+      text-decoration: underline;
+    }
+    
+    .step-box {
+      background-color: var(--bg-light);
+      border-left: 4px solid var(--primary-color);
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .note-box {
+      background-color: var(--bg-light);
+      border-left: 4px solid #f6c23e;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .note-box p {
+      margin: 0;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .back-link i {
+      margin-right: 5px;
+    }
+    
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <img src="images/4.png" alt="Logo">
+          </div>
+          <span class="logo-text">PERFECT PRINTER</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links desktop-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="btn btn-primary">Get Quote</button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="mobile-menu-toggle">
+          <button class="theme-toggle" id="mobile-theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="mobile-menu-btn">
+            <i class="fas fa-bars" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="mobile-btn-container">
+          <button class="btn btn-primary btn-full">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Guide Content -->
+  <div class="container guide-container">
+    <h1><i class="fas fa-envelope"></i> Setting Up EmailJS for the Contact Form</h1>
+    
+    <div class="step-box">
+      <p>This guide will help you set up EmailJS to handle the contact form submissions on the Perfect Printer website. EmailJS allows you to send emails directly from client-side JavaScript without requiring a server-side implementation.</p>
+    </div>
+    
+    <h2>Steps to Set Up EmailJS</h2>
+    
+    <h3>1. Create an EmailJS Account</h3>
+    <ul>
+      <li>Visit <a href="https://www.emailjs.com/" target="_blank">EmailJS website</a> and sign up for a free account</li>
+      <li>The free tier allows up to 200 emails per month</li>
+    </ul>
+    
+    <h3>2. Create an Email Service</h3>
+    <ul>
+      <li>In your EmailJS dashboard, click on "Add New Service"</li>
+      <li>Choose your email provider (Gmail, Outlook, etc.)</li>
+      <li>Connect your email account by following the prompts</li>
+      <li>Note down the <strong>Service ID</strong> that is generated</li>
+    </ul>
+    
+    <h3>3. Create an Email Template</h3>
+    <ul>
+      <li>Go to the "Email Templates" section in the dashboard</li>
+      <li>Click on "Create New Template"</li>
+      <li>Design your email template with the following variables:
+        <ul>
+          <li><code>{{from_name}}</code> - The name of the person submitting the form</li>
+          <li><code>{{from_email}}</code> - The email address of the person submitting the form</li>
+          <li><code>{{service_type}}</code> - The type of service requested</li>
+          <li><code>{{quantity}}</code> - The quantity/limit specified</li>
+          <li><code>{{message}}</code> - The message content</li>
+          <li><code>{{phone}}</code> - The phone number provided</li>
+        </ul>
+      </li>
+      <li>Save the template and note down the <strong>Template ID</strong></li>
+    </ul>
+    
+    <h3>4. Get Your Public Key</h3>
+    <ul>
+      <li>Go to the "Account" section in the dashboard</li>
+      <li>Copy your <strong>Public Key</strong></li>
+    </ul>
+    
+    <h3>5. Update the Website Code</h3>
+    <ul>
+      <li>Open <code>contact.html</code> and replace <code>YOUR_PUBLIC_KEY</code> with your actual public key</li>
+      <li>Open <code>script.js</code> and update the following:
+        <ul>
+          <li>Replace <code>YOUR_SERVICE_ID</code> with your actual service ID</li>
+          <li>Replace <code>YOUR_TEMPLATE_ID</code> with your actual template ID</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <h2>Testing the Form</h2>
+    <ol>
+      <li>Fill out the contact form on the website</li>
+      <li>Submit the form</li>
+      <li>Check your email inbox for the submitted message</li>
+      <li>If you don't see the email, check your spam folder</li>
+    </ol>
+    
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li>If emails are not being sent, check the browser console for any error messages</li>
+      <li>Verify that all IDs and keys are correctly entered</li>
+      <li>Make sure your email template variables match the parameters sent in the code</li>
+    </ul>
+    
+    <div class="note-box">
+      <p><strong>Note:</strong> The free tier of EmailJS has a limit of 200 emails per month. For higher volume needs, consider upgrading to a paid plan.</p>
+    </div>
+    
+    <h2>Additional Resources</h2>
+    <ul>
+      <li><a href="https://www.emailjs.com/docs/" target="_blank">EmailJS Documentation</a></li>
+      <li><a href="https://www.emailjs.com/docs/sdk/installation/" target="_blank">EmailJS SDK Reference</a></li>
+    </ul>
+    
+    <a href="contact.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Contact Form</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Perfect Printer. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -76,7 +76,18 @@
             <h2><i class="fas fa-paper-plane"></i> Send us a Message</h2>
             <p>Fill out the form below and we'll get back to you as soon as possible.</p>
           </div>
-          <form class="contact-form" id="contact-form" method="POST" action="send_mail.php">
+          <form class="contact-form" id="contact-form" action="#" onsubmit="return handleFormSubmit(event);">
+            <div id="server-error-message" class="error-message" style="display: none; color: #e74c3c; background: #fdecea; border: 1px solid #e74c3c; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
+              <p><strong>We're experiencing some technical difficulties with our email system.</strong></p>
+              <p>Please try one of these alternatives:</p>
+              <ul style="margin-left: 20px;">
+                <li>Email us directly at <a href="mailto:info@perfectprinter.com">info@perfectprinter.com</a></li>
+                <li>Call us at (555) 123-4567</li>
+                <li><a href="setup_local_server.html" style="color: #2563eb; font-weight: bold;">Set up a local server to fix this issue</a></li>
+                <li><a href="hostinger_smtp_guide.html" style="color: #2563eb; font-weight: bold;">Configure Hostinger SMTP for this form</a></li>
+                <li><a href="emailjs_setup.html" style="color: #2563eb; font-weight: bold;">Set up EmailJS for this form</a></li>
+              </ul>
+            </div>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -138,33 +149,36 @@
             </div>
 
             <!-- Payment Method Section -->
-            <div class="form-group form-group-full">
+            <!-- <div class="form-group form-group-full">
               <label for="payment-method" style="font-weight:600;font-size:1.1rem;margin-bottom:8px;">Payment Method</label>
-              <div class="payment-methods-row">
-                <label class="payment-method-card">
+              <div class="payment-methods-row"> -->
+                <!-- <label class="payment-method-card">
                   <input type="radio" name="payment_method" value="phonepe" required>
                   <img src="images/phonepay.webp" alt="PhonePe" class="payment-icon">
-                  <!-- <span>PhonePe</span> -->
-                </label>
-                <label class="payment-method-card">
+                   <span>PhonePe</span> -->
+                <!-- </label> --> 
+                <!-- <label class="payment-method-card">
                   <input type="radio" name="payment_method" value="googlepay">
                   <img src="images/googlepay.png" alt="Google Pay" class="payment-icon">
                   <span>Google Pay</span>
-                </label>
-                <label class="payment-method-card">
+                </label> -->
+                <!-- <label class="payment-method-card">
                   <input type="radio" name="payment_method" value="upi">
                   <img src="images/upi.png" alt="UPI" class="payment-icon">
                   <span>UPI</span>
-                </label>
-                <label class="payment-method-card">
+                </label> -->
+                <!-- <label class="payment-method-card">
                   <input type="radio" name="payment_method" value="bank">
                   <img src="images/bank.png" alt="Bank Transfer" class="payment-icon">
                   <span>Bank Transfer</span>
-                </label>
-              </div>
-            </div>
+                </label> -->
+              <!-- </div>
+            </div> -->
 
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <a href="view_submissions.html" class="btn" style="background-color: #4b5563;"><i class="fas fa-inbox"></i> View Submissions</a>
+            </div>
           </form>
         </div>
 
@@ -222,9 +236,9 @@
                 <span>Closed</span>
               </div>
             </div>
-          </div>
+          </div>-->
 
-          <!-- Quick Services -->
+           <!-- Quick Services -->
           <div class="contact-info-card">
             <h3><i class="fas fa-star"></i> Quick Services</h3>
             <ul class="quick-services">
@@ -233,7 +247,7 @@
               <li><i class="fas fa-check"></i> Free design consultation</li>
               <li><i class="fas fa-check"></i> Pickup & delivery</li>
             </ul>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -319,6 +333,19 @@
     </div>
   </footer>
 
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <!-- Initialize EmailJS -->
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your public key
+      emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY", // Replace with your actual EmailJS public key
+      });
+    })();
+  </script>
+  
   <script src="script.js"></script>
 </body>
 </html>

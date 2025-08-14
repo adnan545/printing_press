@@ -45,26 +45,72 @@ if (themeToggle && mobileThemeToggle) {
 
 // Contact form handling
 const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+
+// Function to handle form submission with EmailJS
+function handleFormSubmit(event) {
+  event.preventDefault();
+  
+  // Get form data
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData);
+  
+  // Simple validation
+  if (!data.name || !data.email || !data.service || !data.limit || !data.message) {
+    showNotification('Please fill in all required fields.', 'error');
+    return false;
+  }
+  
+  // Show loading notification
+  showNotification('Processing your message...', 'info');
+  
+  // Prepare template parameters for EmailJS
+  const templateParams = {
+    from_name: data.name,
+    from_email: data.email,
+    service_type: data.service,
+    quantity: data.limit,
+    message: data.message,
+    phone: data.phone || 'Not provided'
+  };
+  
+  // Send email using EmailJS
+  emailjs.send(
+    'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+    templateParams
+  )
+  .then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
     
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
+    // Store the message in localStorage for reference (optional)
+    const messages = JSON.parse(localStorage.getItem('contact-messages') || '[]');
+    messages.push({
+      ...data,
+      timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('contact-messages', JSON.stringify(messages));
     
-    // Simple validation
-    if (!data.name || !data.email || !data.subject || !data.message) {
-      showNotification('Please fill in all required fields.', 'error');
-      return;
-    }
-    
-    // Simulate form submission
-    showNotification('Message sent successfully! We\'ll get back to you within 24 hours.', 'success');
-    
-    // Reset form
+    // Show success notification
+    showNotification('Message sent! We\'ll get back to you within 24 hours.', 'success');
     contactForm.reset();
+    
+    // Show the success popup
+    showPopup();
+  })
+  .catch(function(error) {
+    console.log('FAILED...', error);
+    // Show error notification
+    showNotification('Failed to send message. Please try again later.', 'error');
+    
+    // Show server error message with alternatives
+    document.getElementById('server-error-message').style.display = 'block';
   });
+  
+  return false;
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', handleFormSubmit);
 }
 
 // Notification system
@@ -180,7 +226,7 @@ const sampleImages = {
     { src: 'images/bill book3.png', alt: 'Letterhead Sample 3' }
   ],
   'id-cards': [
-    { src: 'images/id card.png', alt: 'posters' },
+    { src: 'images/id card.jpg', alt: 'posters' },
     { src: 'images/id card1.jpg', alt: 'posters' },
     { src: 'images/id card2.jpg', alt: 'posters' }
   ]
@@ -198,6 +244,23 @@ const popupClose = document.getElementById('popup-close');
 const zoomModal = document.getElementById('zoom-modal');
 const zoomImage = document.getElementById('zoom-image');
 const zoomClose = document.getElementById('zoom-close');
+
+// Success popup functionality
+const successPopup = document.getElementById('successPopup');
+
+function showPopup() {
+  if (successPopup) {
+    successPopup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closePopup() {
+  if (successPopup) {
+    successPopup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
 const zoomPrev = document.getElementById('zoom-prev');
 const zoomNext = document.getElementById('zoom-next');
 
